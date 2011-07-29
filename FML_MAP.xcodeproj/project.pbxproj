@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B12F70E13DE821100FE978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B12F70D13DE821100FE978A /* UIKit.framework */; };
+		4B12F71013DE821100FE978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B12F70F13DE821100FE978A /* Foundation.framework */; };
+		4B12F71213DE821100FE978A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B12F71113DE821100FE978A /* CoreGraphics.framework */; };
+		4B12F71813DE821100FE978A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B12F71613DE821100FE978A /* InfoPlist.strings */; };
+		4B12F71A13DE821100FE978A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B12F71913DE821100FE978A /* main.m */; };
+		4B12F71E13DE821100FE978A /* FML_MAPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B12F71D13DE821100FE978A /* FML_MAPAppDelegate.m */; };
+		4B12F72113DE821100FE978A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B12F71F13DE821100FE978A /* MainWindow.xib */; };
+		4B12F72413DE821100FE978A /* FML_MAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B12F72313DE821100FE978A /* FML_MAPViewController.m */; };
+		4B12F72713DE821100FE978A /* FML_MAPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B12F72513DE821100FE978A /* FML_MAPViewController.xib */; };
+		4B12F72E13DE821F00FE978A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B12F72D13DE821F00FE978A /* QuartzCore.framework */; };
+		4B12F73013DE822700FE978A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B12F72F13DE822700FE978A /* MapKit.framework */; };
+		4B12F73213DE822D00FE978A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B12F73113DE822D00FE978A /* CoreLocation.framework */; };
+		4B55176213DFD394008D99EF /* marker-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B55175F13DFD394008D99EF /* marker-selected.png */; };
+		4B55176313DFD394008D99EF /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B55176013DFD394008D99EF /* marker.png */; };
+		4B55176413DFD394008D99EF /* marker0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B55176113DFD394008D99EF /* marker0.png */; };
+		4B6FC0BF13DFD89F00685E26 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FC0BC13DFD89F00685E26 /* MyAnnotation.m */; };
+		4B6FC0C013DFD89F00685E26 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FC0BE13DFD89F00685E26 /* MyAnnotationView.m */; };
+		4B6FC0C413DFE9EE00685E26 /* UserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FC0C313DFE9EE00685E26 /* UserLocationAnnotationView.m */; };
+		4B6FC0C713DFF50300685E26 /* MapLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FC0C613DFF50200685E26 /* MapLabelView.m */; };
+		4BDC6B5113DEB3C000CD03D3 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDC6B5013DEB3C000CD03D3 /* MKMapView+ZoomLevel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B12F70913DE821100FE978A /* FML_MAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FML_MAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B12F70D13DE821100FE978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4B12F70F13DE821100FE978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4B12F71113DE821100FE978A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4B12F71513DE821100FE978A /* FML_MAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FML_MAP-Info.plist"; sourceTree = "<group>"; };
+		4B12F71713DE821100FE978A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4B12F71913DE821100FE978A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B12F71B13DE821100FE978A /* FML_MAP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FML_MAP-Prefix.pch"; sourceTree = "<group>"; };
+		4B12F71C13DE821100FE978A /* FML_MAPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FML_MAPAppDelegate.h; sourceTree = "<group>"; };
+		4B12F71D13DE821100FE978A /* FML_MAPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FML_MAPAppDelegate.m; sourceTree = "<group>"; };
+		4B12F72013DE821100FE978A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4B12F72213DE821100FE978A /* FML_MAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FML_MAPViewController.h; sourceTree = "<group>"; };
+		4B12F72313DE821100FE978A /* FML_MAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FML_MAPViewController.m; sourceTree = "<group>"; };
+		4B12F72613DE821100FE978A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FML_MAPViewController.xib; sourceTree = "<group>"; };
+		4B12F72D13DE821F00FE978A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4B12F72F13DE822700FE978A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4B12F73113DE822D00FE978A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4B55175F13DFD394008D99EF /* marker-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-selected.png"; sourceTree = "<group>"; };
+		4B55176013DFD394008D99EF /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		4B55176113DFD394008D99EF /* marker0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker0.png; sourceTree = "<group>"; };
+		4B6FC0BB13DFD89F00685E26 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		4B6FC0BC13DFD89F00685E26 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		4B6FC0BD13DFD89F00685E26 /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
+		4B6FC0BE13DFD89F00685E26 /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
+		4B6FC0C213DFE9EE00685E26 /* UserLocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLocationAnnotationView.h; sourceTree = "<group>"; };
+		4B6FC0C313DFE9EE00685E26 /* UserLocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLocationAnnotationView.m; sourceTree = "<group>"; };
+		4B6FC0C513DFF50200685E26 /* MapLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLabelView.h; sourceTree = "<group>"; };
+		4B6FC0C613DFF50200685E26 /* MapLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLabelView.m; sourceTree = "<group>"; };
+		4BDC6B4F13DEB3C000CD03D3 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		4BDC6B5013DEB3C000CD03D3 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B12F70613DE821100FE978A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B12F73213DE822D00FE978A /* CoreLocation.framework in Frameworks */,
+				4B12F73013DE822700FE978A /* MapKit.framework in Frameworks */,
+				4B12F72E13DE821F00FE978A /* QuartzCore.framework in Frameworks */,
+				4B12F70E13DE821100FE978A /* UIKit.framework in Frameworks */,
+				4B12F71013DE821100FE978A /* Foundation.framework in Frameworks */,
+				4B12F71213DE821100FE978A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B12F6FE13DE821000FE978A = {
+			isa = PBXGroup;
+			children = (
+				4B12F73113DE822D00FE978A /* CoreLocation.framework */,
+				4B12F72F13DE822700FE978A /* MapKit.framework */,
+				4B12F72D13DE821F00FE978A /* QuartzCore.framework */,
+				4B12F71313DE821100FE978A /* FML_MAP */,
+				4B12F70C13DE821100FE978A /* Frameworks */,
+				4B12F70A13DE821100FE978A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B12F70A13DE821100FE978A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B12F70913DE821100FE978A /* FML_MAP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B12F70C13DE821100FE978A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B12F70D13DE821100FE978A /* UIKit.framework */,
+				4B12F70F13DE821100FE978A /* Foundation.framework */,
+				4B12F71113DE821100FE978A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B12F71313DE821100FE978A /* FML_MAP */ = {
+			isa = PBXGroup;
+			children = (
+				4B6FC0BA13DFD89F00685E26 /* mapview */,
+				4BDC6B4D13DEB3AB00CD03D3 /* category */,
+				4B12F71C13DE821100FE978A /* FML_MAPAppDelegate.h */,
+				4B12F71D13DE821100FE978A /* FML_MAPAppDelegate.m */,
+				4B12F71F13DE821100FE978A /* MainWindow.xib */,
+				4B12F72213DE821100FE978A /* FML_MAPViewController.h */,
+				4B12F72313DE821100FE978A /* FML_MAPViewController.m */,
+				4B12F72513DE821100FE978A /* FML_MAPViewController.xib */,
+				4B12F71413DE821100FE978A /* Supporting Files */,
+			);
+			path = FML_MAP;
+			sourceTree = "<group>";
+		};
+		4B12F71413DE821100FE978A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B55175E13DFD394008D99EF /* images */,
+				4B12F71513DE821100FE978A /* FML_MAP-Info.plist */,
+				4B12F71613DE821100FE978A /* InfoPlist.strings */,
+				4B12F71913DE821100FE978A /* main.m */,
+				4B12F71B13DE821100FE978A /* FML_MAP-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B55175E13DFD394008D99EF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4B55175F13DFD394008D99EF /* marker-selected.png */,
+				4B55176013DFD394008D99EF /* marker.png */,
+				4B55176113DFD394008D99EF /* marker0.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		4B6FC0BA13DFD89F00685E26 /* mapview */ = {
+			isa = PBXGroup;
+			children = (
+				4B6FC0C213DFE9EE00685E26 /* UserLocationAnnotationView.h */,
+				4B6FC0C313DFE9EE00685E26 /* UserLocationAnnotationView.m */,
+				4B6FC0BB13DFD89F00685E26 /* MyAnnotation.h */,
+				4B6FC0BC13DFD89F00685E26 /* MyAnnotation.m */,
+				4B6FC0BD13DFD89F00685E26 /* MyAnnotationView.h */,
+				4B6FC0BE13DFD89F00685E26 /* MyAnnotationView.m */,
+				4B6FC0C513DFF50200685E26 /* MapLabelView.h */,
+				4B6FC0C613DFF50200685E26 /* MapLabelView.m */,
+			);
+			path = mapview;
+			sourceTree = "<group>";
+		};
+		4BDC6B4D13DEB3AB00CD03D3 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				4BDC6B4F13DEB3C000CD03D3 /* MKMapView+ZoomLevel.h */,
+				4BDC6B5013DEB3C000CD03D3 /* MKMapView+ZoomLevel.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B12F70813DE821100FE978A /* FML_MAP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B12F72A13DE821100FE978A /* Build configuration list for PBXNativeTarget "FML_MAP" */;
+			buildPhases = (
+				4B12F70513DE821100FE978A /* Sources */,
+				4B12F70613DE821100FE978A /* Frameworks */,
+				4B12F70713DE821100FE978A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FML_MAP;
+			productName = FML_MAP;
+			productReference = 4B12F70913DE821100FE978A /* FML_MAP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B12F70013DE821000FE978A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 4B12F70313DE821000FE978A /* Build configuration list for PBXProject "FML_MAP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4B12F6FE13DE821000FE978A;
+			productRefGroup = 4B12F70A13DE821100FE978A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B12F70813DE821100FE978A /* FML_MAP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B12F70713DE821100FE978A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B12F71813DE821100FE978A /* InfoPlist.strings in Resources */,
+				4B12F72113DE821100FE978A /* MainWindow.xib in Resources */,
+				4B12F72713DE821100FE978A /* FML_MAPViewController.xib in Resources */,
+				4B55176213DFD394008D99EF /* marker-selected.png in Resources */,
+				4B55176313DFD394008D99EF /* marker.png in Resources */,
+				4B55176413DFD394008D99EF /* marker0.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B12F70513DE821100FE978A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B12F71A13DE821100FE978A /* main.m in Sources */,
+				4B12F71E13DE821100FE978A /* FML_MAPAppDelegate.m in Sources */,
+				4B12F72413DE821100FE978A /* FML_MAPViewController.m in Sources */,
+				4BDC6B5113DEB3C000CD03D3 /* MKMapView+ZoomLevel.m in Sources */,
+				4B6FC0BF13DFD89F00685E26 /* MyAnnotation.m in Sources */,
+				4B6FC0C013DFD89F00685E26 /* MyAnnotationView.m in Sources */,
+				4B6FC0C413DFE9EE00685E26 /* UserLocationAnnotationView.m in Sources */,
+				4B6FC0C713DFF50300685E26 /* MapLabelView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4B12F71613DE821100FE978A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B12F71713DE821100FE978A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4B12F71F13DE821100FE978A /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B12F72013DE821100FE978A /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4B12F72513DE821100FE978A /* FML_MAPViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B12F72613DE821100FE978A /* en */,
+			);
+			name = FML_MAPViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B12F72813DE821100FE978A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4B12F72913DE821100FE978A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B12F72B13DE821100FE978A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FML_MAP/FML_MAP-Prefix.pch";
+				INFOPLIST_FILE = "FML_MAP/FML_MAP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4B12F72C13DE821100FE978A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FML_MAP/FML_MAP-Prefix.pch";
+				INFOPLIST_FILE = "FML_MAP/FML_MAP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B12F70313DE821000FE978A /* Build configuration list for PBXProject "FML_MAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B12F72813DE821100FE978A /* Debug */,
+				4B12F72913DE821100FE978A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B12F72A13DE821100FE978A /* Build configuration list for PBXNativeTarget "FML_MAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B12F72B13DE821100FE978A /* Debug */,
+				4B12F72C13DE821100FE978A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B12F70013DE821000FE978A /* Project object */;
+}
