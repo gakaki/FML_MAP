@@ -87,7 +87,7 @@
     UIButton* rightButton = [UIButton buttonWithType:
                              UIButtonTypeDetailDisclosure];
     rightButton.tag       = 2;
-    [rightButton setFrame:CGRectMake(10, 10, 30, 30)];
+    [rightButton setFrame:CGRectMake(10, 10, 25, 25)];
     [rightButton addTarget:self action:@selector(myShowDetailsMethod:)
           forControlEvents:UIControlEventTouchUpInside];
    
