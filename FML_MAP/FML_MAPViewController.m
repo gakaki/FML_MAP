@@ -143,7 +143,7 @@
         callout_coords.longitude  = 121.39675117;
         MyAnnotation * callout_ann = [[MyAnnotation alloc] initWithCoords:callout_coords andType:Callout andHouseCount:43 andImg_url:@"http://www.google.com/images/logos/logo.gif"];
         [callout_ann setTitle:@"Google Inc."];
-        [callout_ann setSubtitle:@"Mountain View, CA"];
+        [callout_ann setSubtitle:@"Mountain View, CA1"];
 
         [myMapView addAnnotation:callout_ann];
         [google release];
