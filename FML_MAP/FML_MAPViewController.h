@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>  
-
+#import "HouseInfoView.h"
 
 @interface FML_MAPViewController : UIViewController<MKMapViewDelegate,
 UITextFieldDelegate>
@@ -17,17 +17,15 @@ UITextFieldDelegate>
     MKMapView *myMapView; 
     CLLocationCoordinate2D my_location;
     
+    HouseInfoView *house_info_view;
    // MKReverseGeocoder *geoCoder;
-  
-    
 }
 
-@property (nonatomic, retain)   MKMapView *myMapView; 
+@property (nonatomic, retain)   MKMapView       *myMapView; 
+@property (nonatomic, retain)   HouseInfoView   *house_info_view; 
 //@property (nonatomic, retain)   MKReverseGeocoder *geoCoder;
 
-
 -(void)display_my_map;
-
 
 
 @end

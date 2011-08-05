@@ -15,7 +15,7 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 @synthesize locationManager;
-@synthesize gakaki;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -23,17 +23,17 @@
     [locationManager setDelegate:self];
 //    [locationManager setDistanceFilter:kCLDistanceFilterNone];
     //[locationManager setDistanceFilter:20];    
-    
     [locationManager setDistanceFilter:50.0f];
-    
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
     locationManager.purpose = @"福美来房地产需要获取您当前的位置收集该位置附近的房源信息";
     [locationManager startUpdatingLocation];
     
     
-    [self setGakaki:@"gakakiwithyou"];
     
-
+    //add a splash screen
+    
+    
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -92,7 +92,6 @@
         [locationManager setDelegate:nil];
     [locationManager release];
     
-    [gakaki release];
     [_window release];
     [_viewController release];
     [super dealloc];

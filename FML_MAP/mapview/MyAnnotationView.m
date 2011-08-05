@@ -16,7 +16,7 @@
 
 - (id)initWithAnnotation:(id)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
-	MyAnnotation * myAnnotation = (MyAnnotation*)annotation;
+	MyAnnotation * my_annotation = (MyAnnotation*)annotation;
  
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     self.backgroundColor = [UIColor clearColor];
@@ -31,22 +31,27 @@
         
 
     }else{
-    	if([myAnnotation annotationType] == HouseBuild) {
+    	if([my_annotation annotationType] == HouseBuild) {
             
             self.image = [UIImage imageNamed:@"marker.png"];
+
+            float title_width = self.image.size.width*3;
+            float title_margin_left = (title_width - self.image.size.width)/2;
+           
+            CGRect title_label_size = CGRectMake(-title_margin_left, self.image.size.height+2, title_width, 15);
                       
-            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(2, 30, 25,112)];
-            label.text   =  [NSString stringWithFormat:@"%d", [annotation title]];
+            UILabel *label = [[UILabel alloc]initWithFrame:title_label_size];
+            label.text   =  [NSString stringWithFormat:@"%d套 %d元", [annotation count],[annotation price] ];
               
             label.font = [UIFont systemFontOfSize:10];
             label.numberOfLines = 2;
             label.textAlignment = UITextAlignmentCenter;            
             label.textColor = [UIColor whiteColor];
-            
+            [label setTag:1];
             label.opaque = NO;
           //  label.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
-            //label.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.1];
-            label.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:.1];
+            label.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.7];
+           // label.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:.1];
 
             [label.layer setCornerRadius:5.0f];
             //[label.layer setBorderColor:[UIColor colorWithHue:0.0 saturation:0.0 brightness:1.0 alpha:0.1].CGColor];

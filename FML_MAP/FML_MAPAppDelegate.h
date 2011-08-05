@@ -14,7 +14,7 @@
 @interface FML_MAPAppDelegate : NSObject <UIApplicationDelegate,CLLocationManagerDelegate>{
 
         CLLocationManager *locationManager;
-        NSString *gakaki;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -22,7 +22,5 @@
 @property (nonatomic, retain) IBOutlet FML_MAPViewController *viewController;
 
 @property (readonly,nonatomic, assign) CLLocationManager  *locationManager;
-
-@property (nonatomic, copy) NSString  *gakaki;
 
 @end

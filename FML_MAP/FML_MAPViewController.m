@@ -4,15 +4,18 @@
 #import "MyAnnotation.h"
 #import "MyAnnotationView.h"
 #import <QuartzCore/QuartzCore.h>
+
 #define ZOOM_LEVEL 14
 
 @interface FML_MAPViewController()
 -(void)add_other_annotation;
+-(void)reset_select_point_title_position:(MyAnnotationView *)v;
+-(void)gakaki:(id)sender;
 @end
 
 @implementation FML_MAPViewController
 
-@synthesize myMapView;
+@synthesize myMapView,house_info_view;
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -26,104 +29,52 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //  [NSThread detachNewThreadSelector:@selector(displayMYMap) toTarget:self withObject:nil]; 
-    
+
     [self display_my_map];
     [self add_other_annotation];
 }
-//
-//- (MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id <MKAnnotation>)annotation
-//{
-//    NSLog(@"checking annotation");
-//    MyAnnotationView *aView = [[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"location"];
-//	[aView setEnabled:YES];
-//	[aView setCanShowCallout:YES];
-////	
-////    my_location  = [annotation coordinate];
-////    [myMapView setCenterCoordinate:my_location zoomLevel:16 animated:FALSE];
-////    
-//    return aView;
-//    
-//    //    UIImage *image = [UIImage imageNamed:@"marker0.png"];
-//    //    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//    //    [pinView addSubview:imageView];
-//    //    [imageView release];
-//    
-//}
+
+
+#define sim_address 1
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-	NSLog(@"checking annotation");
+
     
     if ([annotation isKindOfClass:[MKUserLocation class]]) 
     {
-        my_location  = [annotation coordinate];
-        [myMapView setCenterCoordinate:my_location zoomLevel:15 animated:FALSE];
+            my_location  = [annotation coordinate];
+#ifdef sim_address
+            my_location = CLLocationCoordinate2DMake(31.18454089, 121.42275005);
+#endif
+        
+        //   NSLog(@"%f %f",my_location.latitude,my_location.longitude);
+            [myMapView setCenterCoordinate:my_location zoomLevel:15 animated:FALSE];
     }
     
-    MyAnnotationView *aView = [[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"location"];
+    MyAnnotationView *aView = [[[MyAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"location"] autorelease];
     
     [aView setEnabled:YES];
     [aView setCanShowCallout:NO];
     return aView;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
 
-    MyAnnotationView *v = (MyAnnotationView *)view;
-    v.image  = [UIImage imageNamed:@"marker-selected.png"];
-    [v setCenterOffset:CGPointMake(5, 5)];
-    
-    
-    UILabel *white_view = [[UILabel alloc]initWithFrame:CGRectMake(2, 2, 15,20)];
-    white_view.backgroundColor = [UIColor whiteColor];
-    
-    white_view.opaque = NO;
-    [white_view.layer setCornerRadius:5.0f];
-    white_view.clipsToBounds = YES;
-    white_view.tag = 1;
-    [v addSubview:white_view];
 
-    
-    UIButton* rightButton = [UIButton buttonWithType:
-                             UIButtonTypeDetailDisclosure];
-    rightButton.tag       = 2;
-    [rightButton setFrame:CGRectMake(10, 10, 25, 25)];
-    [rightButton addTarget:self action:@selector(myShowDetailsMethod:)
-          forControlEvents:UIControlEventTouchUpInside];
-   
-    [v addSubview:rightButton];
-    
-    NSLog(@"%@",view);
-}
--(void)myShowDetailsMethod:(id)sender{
-    NSLog(@"werqwrew");
-}
-- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
-{
-    MyAnnotationView *v = (MyAnnotationView *)view;
-    v.image  = [UIImage imageNamed:@"marker.png"];
-
-//    
-//    for (int i=1; i++; i<4) {
-//        [[v viewWithTag:i] removeFromSuperview];
-//    }
-    [[v viewWithTag:1] removeFromSuperview];
-    [[v viewWithTag:2] removeFromSuperview];
-    
-}
 -(void)add_other_annotation{
     
-    
-    
-    NSUInteger is_in_home = 1;
+    NSUInteger is_in_home = 0;
     if (is_in_home) {
-    
+        
         CLLocationCoordinate2D googleCoords;
         googleCoords.latitude   = 31.26054730;
         googleCoords.longitude  = 121.39675117;
-        MyAnnotation * google = [[MyAnnotation alloc] initWithCoords:googleCoords andType:HouseBuild andHouseCount:23 andImg_url:@"http://www.google.com/images/logos/logo.gif"];
-        [google setTitle:@"Google Inc."];
-        [google setSubtitle:@"Mountain View, CA"];
+        MyAnnotation * google = [[MyAnnotation alloc] initWithCoords:googleCoords 
+                                                             andType:HouseBuild 
+                                                       andHouseCount:23 
+                                                            andPrice:6500 
+                                                          andImg_url:@"http://www.google.com/images/logos/logo.gif"];
+        [google setTitle:@"毗邻地铁7号线　高。。。"];
+        [google setSubtitle:@"125平方米 精装 第18层"];
+        [google setPrice:7500.0f];
         
         [myMapView addAnnotation:google];
         [google release];
@@ -131,48 +82,75 @@
         CLLocationCoordinate2D appleCoords;
         appleCoords.latitude   = 31.26044730;
         appleCoords.longitude  = 121.39775117;
-        MyAnnotation * apple = [[MyAnnotation alloc] initWithCoords:appleCoords andType:HouseBuild andHouseCount:44 andImg_url:@"http://www.google.com/images/logos/logo.gif"];
-        [apple setTitle:@"Apple Inc."];
-        [apple setSubtitle:@"Cupertino, CA"];
+        MyAnnotation * apple = [[MyAnnotation alloc] initWithCoords:appleCoords 
+                                                            andType:HouseBuild 
+                                                      andHouseCount:44 
+                                                           andPrice:8900 
+                                                         andImg_url:@"http://www.google.com/images/logos/logo.gif"];
+        [apple setTitle:@"毗邻地铁7号线　高。。。"];
+        [apple setSubtitle:@"125平方米 精装 第18层"];
+        [apple setPrice:7500.0f];
         [myMapView addAnnotation:apple];
         [apple release];
-        
         
         CLLocationCoordinate2D callout_coords;
         callout_coords.latitude   = 31.25954730;
         callout_coords.longitude  = 121.39675117;
-        MyAnnotation * callout_ann = [[MyAnnotation alloc] initWithCoords:callout_coords andType:Callout andHouseCount:43 andImg_url:@"http://www.google.com/images/logos/logo.gif"];
-        [callout_ann setTitle:@"Google Inc."];
-        [callout_ann setSubtitle:@"Mountain View, CA12"];
-
+        MyAnnotation * callout_ann = [[MyAnnotation alloc] initWithCoords:callout_coords 
+                                                                  andType:Callout 
+                                                            andHouseCount:43 
+                                                                 andPrice:7200 
+                                                               andImg_url:@"http://www.google.com/images/logos/logo.gif"];
+        [callout_ann setTitle:@"毗邻地铁7号线　高。。。"];
+        [callout_ann setSubtitle:@"125平方米 精装 第18层"];
+        [callout_ann setPrice:7500.0f];
         [myMapView addAnnotation:callout_ann];
         [google release];
-
-        
         
     }else{
         
         CLLocationCoordinate2D googleCoords;
-        googleCoords.latitude = 31.18477364;
-        googleCoords.longitude = 121.42303757;
-        MyAnnotation * google = [[MyAnnotation alloc] initWithCoords:googleCoords andType:HouseBuild andHouseCount:23  andImg_url:@"http://www.google.com/images/logos/logo.gif"];
-        [google setTitle:@"Google Inc."];
-        [google setSubtitle:@"Mountain View, CA"];
+        googleCoords.latitude   = 31.185541;
+        googleCoords.longitude  = 121.423750;
+        MyAnnotation * google = [[MyAnnotation alloc] initWithCoords:googleCoords 
+                                                             andType:HouseBuild 
+                                                       andHouseCount:23 
+                                                            andPrice:6500 
+                                                          andImg_url:@"http://www.google.com/images/logos/logo.gif"];
+        [google setTitle:@"毗邻地铁7号线　高。。。"];
+        [google setSubtitle:@"125平方米 精装 第18层"];
+        [google setPrice:7500.0f];
         
         [myMapView addAnnotation:google];
         [google release];
         
         CLLocationCoordinate2D appleCoords;
-        appleCoords.latitude = 31.18477364;
-        appleCoords.longitude = 121.42403799;
-        MyAnnotation * apple = [[MyAnnotation alloc] initWithCoords:appleCoords andType:HouseBuild andHouseCount:44  andImg_url:@"http://www.google.com/images/logos/logo.gif"];
-        [apple setTitle:@"Apple Inc."];
-        [apple setSubtitle:@"Cupertino, CA"];
+        appleCoords.latitude   = 31.185641;
+        appleCoords.longitude  = 121.424750;
+        MyAnnotation * apple = [[MyAnnotation alloc] initWithCoords:appleCoords 
+                                                            andType:HouseBuild 
+                                                      andHouseCount:44 
+                                                           andPrice:8900 
+                                                         andImg_url:@"http://www.google.com/images/logos/logo.gif"];
+        [apple setTitle:@"毗邻地铁7号线　高。。。"];
+        [apple setSubtitle:@"125平方米 精装 第18层"];
+        [apple setPrice:7500.0f];
         [myMapView addAnnotation:apple];
         [apple release];
         
+        CLLocationCoordinate2D callout_coords;
+        callout_coords.latitude   = 31.185741;
+        callout_coords.longitude  = 121.425750;
+        MyAnnotation * callout_ann = [[MyAnnotation alloc] initWithCoords:callout_coords 
+                                                                  andType:Callout 
+                                                            andHouseCount:43 
+                                                                 andPrice:7200 
+                                                               andImg_url:@"http://www.google.com/images/logos/logo.gif"];
+        [callout_ann setTitle:@"毗邻地铁7号线　高。。。"];
+        [callout_ann setSubtitle:@"125平方米 精装 第18层"];
+        [callout_ann setPrice:7500.0f];
+        [myMapView addAnnotation:callout_ann];
     }
-    
 }
 
 -(void)display_my_map
@@ -186,13 +164,74 @@
     
     [self.view addSubview:myMapView]; 
 }
+-(void)reset_select_point_title_position:(MyAnnotationView *)v  {
+  for (UIView *sub_v in v.subviews)
+    {
+        if ([sub_v isKindOfClass:[UILabel class]]) {
+            
+            UILabel *lbl_house_title = (UILabel *)sub_v;
+            float title_width = v.image.size.width*3;
+            float title_margin_left = (title_width - v.image.size.width)/2;
+            CGRect title_label_size = CGRectMake(-title_margin_left, v.image.size.height+2, title_width, 15);
+            [lbl_house_title setFrame:title_label_size];
+        }
+    }
+
+}
+
+-(void)gakaki:(id)sender{
+    
+    UIButton* button = (UIButton*)sender;
+    
+    if (button.superview.tag == 2) {
+            
+        HouseInfoView *house = (HouseInfoView *)button.superview;
+        NSLog(@"%@",[[house ann]subtitle]);
+    }
+}
+
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    
+    MyAnnotationView *my_annotation_view = (MyAnnotationView *)view;
+    my_annotation_view.image  = [UIImage imageNamed:@"marker-selected.png"];
+    [self reset_select_point_title_position:my_annotation_view];
+    
+    house_info_view = [[HouseInfoView alloc] initWithAnnotation:(MyAnnotation *)[view annotation] 
+                                                                   andSelector:@selector(myShowDetailsMethod:)];
+    [house_info_view setTag:2];
+    [self.view addSubview:house_info_view];
+
+    for (UIView *sub_v in house_info_view.subviews)
+    {
+        if ([sub_v isKindOfClass:[UIButton class]]) {
+           
+            [(UIButton *)sub_v addTarget:self action:@selector(gakaki:) 
+                      forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+
+
+
+    
+    [house_info_view setAlpha:0.0];
+    [UIView beginAnimations:nil context:nil];
+    [house_info_view setAlpha:1.0];
+    [UIView commitAnimations];
+    [house_info_view release];
+    NSLog(@"house info view retain count is %d",[house_info_view retainCount]);
+}
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    MyAnnotationView *my_annotation_view    = (MyAnnotationView *)view;
+    my_annotation_view.image                = [UIImage imageNamed:@"marker.png"];
+    [self reset_select_point_title_position: my_annotation_view];
+
+    [[self.view viewWithTag:2] removeFromSuperview];
+}
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)u
 {
-}
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -200,7 +239,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)viewDidUnload
+{
+    house_info_view = nil;
+    myMapView       = nil;
+    [super viewDidUnload];
+}
 -(void)dealloc{
+    [house_info_view release];
     [myMapView release];
     [super dealloc];
 }

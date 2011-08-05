@@ -9,10 +9,12 @@
 @synthesize annotationType;
 @synthesize count;
 @synthesize img_url;
+@synthesize price;
 
 - (id)initWithCoords:(CLLocationCoordinate2D) coords 
              andType:(AnnotationType) type 
        andHouseCount:(NSUInteger)houseCount 
+            andPrice:(NSUInteger)price_house
           andImg_url:(NSString*)img_url_web
 {
     
@@ -20,6 +22,7 @@
 		coordinate = coords;
 		self.annotationType = type;
         self.count          = houseCount;
+        self.price          = price_house;
         self.img_url        = img_url_web;
 	}
 	return self;
